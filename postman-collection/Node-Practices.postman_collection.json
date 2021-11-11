@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "f7a66d86-bad0-4c3c-9629-ec2ab3133525",
+		"name": "Node-Practices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get - product data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseurl}}/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Post - add products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":0,\n    \"product_name\" : \"Coffee machine\",\n    \"sku\" : \"coffee-machine\",\n    \"price\" : 5365.00,\n    \"is_active\" : 1,\n    \"created_at\" : \"2018-09-15 00:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseurl}}/add/products"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":7,\n    \"product_name\" : \"Calculator\",\n    \"sku\" : \"calci\",\n    \"price\" : 5365.00,\n    \"is_active\" : 1,\n    \"created_at\" : \"2018-09-15 00:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseurl}}/modify/product"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - remove product by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseurl}}/remove/7"
+			},
+			"response": []
+		}
+	]
+}
