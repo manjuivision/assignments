@@ -11,7 +11,6 @@ const Router = express.Router();
 Router.get("/products",(req,res)=>{
     mysqlConnection.query('SELECT * FROM products', (err,rows) => {
         if(err) throw err;
-      
         console.log('Data received from Db:');
         console.log(rows);
         res.status(200).send(rows);
@@ -58,9 +57,8 @@ Router.delete("/remove/:id",(req,res)=>{
       console.log(err);
     } else {
       //res.send("Product delete from Database");
-     // res.status(200).send("<h1>Welcome to nodejs portal.</h1>");
+      //res.status(200).send("<h1>Welcome to nodejs portal.</h1>");
       res.status(200).send(result);
-
     }
   });
 })

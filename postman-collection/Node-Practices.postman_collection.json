@@ -64,7 +64,70 @@
 						}
 					}
 				},
-				"url": "{{baseurl}}/remove/7"
+				"url": "{{baseurl}}/remove/6"
+			},
+			"response": []
+		},
+		{
+			"name": "Get- tasks table data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseurl}}/tasks/join"
+			},
+			"response": []
+		},
+		{
+			"name": "Get- records left join",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseurl}}/tasks/left-join"
+			},
+			"response": []
+		},
+		{
+			"name": "Get- records right join",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseurl}}/tasks/right-join"
 			},
 			"response": []
 		}
