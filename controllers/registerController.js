@@ -1,6 +1,5 @@
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
-
 const mysql = require('mysql');
 const conn = require('../connection');
 
