@@ -13,7 +13,7 @@ async function test(){
 }
 
 console.log('Before calling manju');
-let a = test();
+let a =  test();
 console.log('After calling manju');
 console.log(a);
 console.log('End of the file');
