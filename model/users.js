@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 let validator = require('validator');
 
-const User = mongoose.model('task',{
+const User = mongoose.model('md-task',{
     name:{
         type : String,
         required: true,
