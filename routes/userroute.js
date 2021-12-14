@@ -72,5 +72,23 @@ router.get('/get/records',(req, res) => {
     })
 })
 
+// sort ascending
+router.get('/get/sort/asc',(req, res) => {
+    var mysort = { name: 1 };
+    User.find().sort(mysort).then((users) => {
+        res.send({"Users":users});
+    }).catch(() =>{
+        res.status(400).send({error});
+    })
+})
+// sort decending
+router.get('/get/sort/desc',(req, res) => {
+    var mysort = { name: -1 };
+    User.find().sort(mysort).then((users) => {
+        res.send({"Users":users});
+    }).catch(() =>{
+        res.status(400).send({error});
+    })
+})
 
 module.exports = router;

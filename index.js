@@ -19,6 +19,16 @@ let port = 3000;
 
 app.use(express.json());
 
+//Express middleware
+//use next
+app.use((res,req,next) => {
+    if(req.method === 'GET'){
+        res.send('GET methods are disabled');
+    }else{
+        next();
+    }
+})
+
 //Test rest api call through postman
 
 app.use(userRouter);
