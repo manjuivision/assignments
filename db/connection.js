@@ -1,7 +1,7 @@
 const MongoClient = require('mongoose');
 const express = require('express');
 
-const url = "mongodb://localhost:27017/Employee";
+const url = "mongodb://localhost:27017/Nodetest";
 
 MongoClient.connect(url, function(err, db) {
     try{
