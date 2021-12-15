@@ -42,7 +42,6 @@ router.patch('/user/modify',async (req, res)  => {
 //User Delete records in the collection Delete
 
 router.delete('/user',async (req, res)  => {
-    //const data = new User(req.body);
     try{
         const user =  await User.findByIdAndDelete(req.query.id);
         if (!user){
@@ -52,43 +51,87 @@ router.delete('/user',async (req, res)  => {
     }catch(e){
         res.status(500).send(e);
     }
+
 })
 
 //Get User all Collection records
 
 router.get('/users',(req, res) => {
+
     User.find().then((users) => {
+
         res.send({"Users":users});
+
     }).catch(() =>{
+
         res.status(400).send({error});
     })
 })
-// match aggregation
+// find with condition
 router.get('/get/records',(req, res) => {
+
     User.find({ age:{$gt:24}}).then((users) => {
+
         res.send({"Users":users});
+
     }).catch(() =>{
+
         res.status(400).send({error});
     })
 })
 
 // sort ascending
 router.get('/get/sort/asc',(req, res) => {
+
     var mysort = { name: 1 };
+
     User.find().sort(mysort).then((users) => {
+
         res.send({"Users":users});
+
     }).catch(() =>{
+
         res.status(400).send({error});
     })
 })
 // sort decending
 router.get('/get/sort/desc',(req, res) => {
+
     var mysort = { name: -1 };
+
     User.find().sort(mysort).then((users) => {
+
         res.send({"Users":users});
+
     }).catch(() =>{
+
         res.status(400).send({error});
     })
 })
 
+// match aggregation
+router.get('/get/records/agge',(req, res) => {
+
+    User.aggregate([
+
+        { $match: { name: 'manju dalai' } },
+
+        { $group: { _id: "$name", sumQuantity: { $sum: 1 } } }
+
+        ]).then((users) => {
+
+            res.send({"Users":users});
+
+        }).catch(() =>{
+
+            res.status(400).send({error});
+    })
+})
+
+router.get('/get/aggregation',(req, res) => {
+    
+    User.aggregate([
+        
+    ])
+})
 module.exports = router;
